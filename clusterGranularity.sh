@@ -6,11 +6,12 @@ DATASET="BGL_500M_J1"                  # 数据集名称（需与JSONL文件名�
 SCALE="small"                          # 采样规模（固定）
 EMBED_METHOD="finetuned"               # 嵌入方法（固定）
 D="67.0"                               # 聚类参数（固定）
-OPENAI_API_KEY="sk-cad4c76c92bd4ed3b52149954285bf0c"  # 你的OpenAI密钥
+QWEN_API_KEY="sk-cad4c76c92bd4ed3b52149954285bf0c"  # 你的OpenAI密钥
+OPENAI_API_KEY="sk-cad4c76c92bd4ed3b52149954285bf0c"
 OPENAI_ORG=""                          # 无组织ID则留空
 SEED=100                               # 随机种子
 CUDA_DEVICE="0"                        # 有GPU填"0"，无GPU填"none"
-EMBED_MODEL="all-MiniLM-L6-v2"         # 改用国内可下载的轻量模型（无需科学上网）
+EMBED_MODEL="sentence-transformers/all-MiniLM-L6-v2"         # 改用国内可下载的轻量模型（无需科学上网）
 
 # ==================== 自动推导路径（无需修改）====================
 BASE_DIR=$(cd $(dirname $0); pwd)
@@ -193,3 +194,4 @@ echo "1. 嵌入文件：$FEAT_PATH"
 echo "2. 采样样本对：$CLUSTERING_RESULTS"
 echo "3. GPT预测结果：$PRED_PAIR_DIR"
 echo "4. 可视化图表：$VIS_DIR"
+
